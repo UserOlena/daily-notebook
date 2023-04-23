@@ -1,7 +1,6 @@
 require('dotenv').config();
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
-// const uuid = uuidv4();
 const express = require('express');
 const app = express();
 
@@ -34,25 +33,43 @@ app.post('/api/notes', (req, res) => {
     if (title || (title && text)) {
         fs.readFile(`${__dirname}/db/db.json`, 'utf8', (err, dbNotes) => {
             if (err) {
-                return res.status(500).json(err);;
+                res.status(500).json(err);;
             } else {
                 const notes = JSON.parse(dbNotes);
                 const id = uuidv4();
                 const newNote = { title, text, id };
                 notes.push(newNote);
 
-                fs.writeFile(`${__dirname}/db/db.json`, JSON.stringify(notes), (err) => {
-                    if (err) {
-                        console.log(`Occured problem while writing the file.`);
-                        return res.status(500).json(err);
-                    } else {
-                        console.log('File has been written succesfully!');
-                        return res.status(200);
-                    }
-                })
+                writeToFile(notes, res);
             }
         })
     }
 })
 
-app.listen(PORT, () => console.log(`Server listening on PORT http://localhost: ${PORT}`));
+
+app.delete('/api/notes/:id', (req, res) => {
+    const id = req.params.id;
+    fs.readFile(`${__dirname}/db/db.json`, 'utf8', (err, dbNotes) => {
+        if (err) {
+            res.sendStatus(500);
+        } else {
+            const notes = JSON.parse(dbNotes).filter(element => element.id !== id);
+            writeToFile(notes, res);
+        }
+    })
+})
+
+
+function writeToFile(notes, res) {
+    fs.writeFile(`${__dirname}/db/db.json`, JSON.stringify(notes), (err) => {
+        if (err) {
+            console.log(`Occured problem while writing the file.`);
+            res.status(500).json(err);
+        } else {
+            console.log('File has been written succesfully!');
+            res.sendStatus(200);
+        }
+    });
+}
+
+app.listen(PORT, () => console.log(`Server listening on PORT http://localhost:${PORT}`));
