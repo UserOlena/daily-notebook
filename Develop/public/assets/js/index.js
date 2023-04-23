@@ -11,6 +11,8 @@ if (window.location.pathname === '/notes') {
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
+// activeNote is used to keep track of the note in the textarea
+let activeNote = {};
 
 // Show an element
 const show = (elem) => {
@@ -22,8 +24,6 @@ const hide = (elem) => {
   elem.style.display = 'none';
 };
 
-// activeNote is used to keep track of the note in the textarea
-let activeNote = {};
 
 const getNotes = () =>
   fetch('/api/notes', {
@@ -31,39 +31,39 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+});
 
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(note),
-  });
+  },
+  body: JSON.stringify(note),
+});
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-    },
-  });
+  },
+});
 
 const renderActiveNote = () => {
-  hide(saveNoteBtn);
+hide(saveNoteBtn);
 
-  if (activeNote.id) {
-    noteTitle.setAttribute('readonly', true);
-    noteText.setAttribute('readonly', true);
-    noteTitle.value = activeNote.title;
-    noteText.value = activeNote.text;
-  } else {
-    noteTitle.removeAttribute('readonly');
-    noteText.removeAttribute('readonly');
-    noteTitle.value = '';
-    noteText.value = '';
-  }
+if (activeNote.id) {
+  noteTitle.setAttribute('readonly', true);
+  noteText.setAttribute('readonly', true);
+  noteTitle.value = activeNote.title;
+  noteText.value = activeNote.text;
+} else {
+  noteTitle.removeAttribute('readonly');
+  noteText.removeAttribute('readonly');
+  noteTitle.value = '';
+  noteText.value = '';
+}
 };
 
 const handleNoteSave = () => {
