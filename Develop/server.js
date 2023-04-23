@@ -27,6 +27,11 @@ app.get('/api/notes', (req, res) => {
 });
 
 
+app.get('*', (req, res) => {
+    res.sendFile(`${__dirname}/public/index.html`);
+})
+
+
 app.post('/api/notes', (req, res) => {
     const { title, text } = req.body;
 
