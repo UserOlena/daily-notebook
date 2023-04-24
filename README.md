@@ -39,7 +39,7 @@
 
 ---
 ## Installation
->There is no need for installation as the web application is readily available for use [here](https://note--taker.herokuapp.com)
+* There is no need for installation as the web application is readily available for use [here](https://note--taker.herokuapp.com)
 
 ---
 ## Usage
