@@ -35,7 +35,6 @@
 *  Express v4.18.2
 *  FS v0.0.1-security
 *  UUID v4
-*  DOTENV v16.0.3
 
 ---
 ## Installation
