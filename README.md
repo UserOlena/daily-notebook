@@ -26,7 +26,7 @@
 ---
 ## Preview 
 
-![Preview](./Develop/public/assets/img/preview.png) 
+![Preview](./develop/public/assets/img/preview.png) 
 
 ---
 ## Technologies Used
