@@ -21,7 +21,7 @@
 
 ---
 ## General Information 
->The main purpose of the Note Taker application is to provide users with a convenient way to store and organize their notes, thereby improving their overall experience. By enabling users to save and manage their notes, the application helps them keep track of their tasks and thoughts in a structured manner The starter code for this project was downloaded from [_coding-boot-camp_](https://github.com/coding-boot-camp/miniature-eureka).The development of the application was done accordingly to [user story](#user-tory) and [acceptance criteria](#acceptance-criteria).
+>The main purpose of the Note Taker application is to provide users with a convenient way to store and organize their notes, thereby improving their overall experience. By enabling users to save and manage their notes, the application helps them keep track of their tasks and thoughts in a structured manner The starter code for this project was downloaded from [coding-boot-camp](https://github.com/coding-boot-camp/miniature-eureka).The development of the application was done accordingly to [user story](#user-story) and [acceptance criteria](#acceptance-criteria).
 
 ---
 ## Preview 
