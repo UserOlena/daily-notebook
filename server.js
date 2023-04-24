@@ -1,4 +1,3 @@
-require('dotenv').config();
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 const express = require('express');
@@ -45,8 +44,12 @@ app.post('/api/notes', (req, res) => {
                 res.sendStatus(500);
             } else {
                 const notes = JSON.parse(dbNotes);
-                const id = uuidv4();
-                const newNote = { title, text, id };
+                const newNote = { 
+                    title, 
+                    text, 
+                    id: uuidv4(),
+                };
+
                 notes.push(newNote);
 
                 writeToFile(notes, res);
