@@ -4,7 +4,7 @@
 
 --- 
 > The Note Taker was developed as a component of the Berkeley Coding Bootcamp Challenge 11. The application can be used to write, save, read and delete notes.
-- The [Live Preview]()
+- The [Live Preview](https://note--taker.herokuapp.com)
 
 ---
 ## Table of Contents
@@ -39,11 +39,11 @@
 
 ---
 ## Installation
->There is no need for installation as the web application is readily available for use [_here_]()
+>There is no need for installation as the web application is readily available for use [_here_](https://note--taker.herokuapp.com)
 
 ---
 ## Usage
-- Upon launching the [Note Taker]() application, users are directed to a landing page. Once the user clicks the "Get Started" button, they are redirected to a notes page where they can begin to create and manage their notes.
+- Upon launching the [Note Taker](https://note--taker.herokuapp.com) application, users are directed to a landing page. Once the user clicks the "Get Started" button, they are redirected to a notes page where they can begin to create and manage their notes.
 - To initiate the creation of a new note, the user can click on the "+" icon located in the top right corner of the notes page. This action will open a blank note where the user can enter the relevant details, such as the note's title and body content.
 - After entering the note details, the user can save it to the database by clicking on the "save" icon located in the top right corner of the notes page.
 - To view the details of an existing note, the user can click on any of the notes listed in the left-hand column. Upon selecting a note, the Note Taker application retrieves the content of that note from the database and displays it to the user.
@@ -51,7 +51,7 @@
 
 ---
 ## Project Status 
->Project is: Complete 
+- Project is: Complete 
 
 ---
 ## User Story
@@ -85,4 +85,4 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ---
 ## License
->This project is open source and available under the [MIT](./LICENSE)
+- This project is open source and available under the [MIT](./LICENSE)
